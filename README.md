@@ -1,5 +1,4 @@
 # rsschool-cv
 learning task from rsschool
 
-change for first commit
-change for second commit
+link to cv: [link](https://mangustik228.github.io/rsschool-cv/cv)
