@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap");
+@font-face {
+  font-family: impact;
+  font-display: swap;
+  src: url("../fonts/impact.woff2") format("woff2") url("../fonts/impact.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Impacted;
+  font-display: swap;
+  src: url("../fonts/Impacted.woff2") format("woff2") url("../fonts/Impacted.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: unicode;
+  font-display: swap;
+  src: url("../fonts/unicode.woff2") format("woff2") url("../fonts/unicode.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:focus, *:active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+h5, h4, h3, h2, h1 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.header__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.header__surname-name {
+  flex-basis: 50%;
+}
+.header__navigation {
+  flex-basis: 50%;
+}
+.header__navigation ul {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: space-around;
+}
+.header__navigation ul li a {
+  color: #C9F0DD;
+}
+.header__navigation ul li a:hover {
+  color: #44B78B;
+}
+
+.green {
+  color: #156741;
+}
+
+.about-me__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.about-me__wrapper div {
+  flex-basis: 50%;
+}
+.about-me__code-block {
+  margin-left: -20px;
+}
+
+.main-block {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.main-block__my-name h1 {
+  text-align: center;
+  font-size: 3.4rem;
+  font-family: Inconsolata, monospace;
+  font-weight: 700;
+  color: #44B78B;
+  padding-bottom: 15px;
+}
+.main-block__profession {
+  text-align: center;
+  padding-bottom: 15px;
+  font-size: 2.7rem;
+  font-weight: 900;
+  font-family: Inconsolata, monospace;
+}
+.main-block__description {
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.code-block__image {
+  position: relative;
+}
+.code-block__image img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding-top: 40px;
+  opacity: 0.6;
+  width: 65%;
+}
+.code-block__code {
+  color: rgba(200, 255, 200, 0.2);
+}
+
+.history {
+  margin-bottom: 50px;
+}
+.history__wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.history__logo {
+  padding: 0 30px;
+}
+.history__text {
+  font-size: 1.4rem;
+}
+
+.skills {
+  margin-bottom: 50px;
+}
+.skills__wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.skill__box {
+  width: 300px;
+  cursor: help;
+  text-align: left;
+  padding-left: 50px;
+  margin-bottom: 25px;
+}
+.skill__box:hover {
+  color: #156741;
+}
+.skill__key {
+  display: inline;
+  position: relative;
+  padding-left: 20px;
+}
+.skill__key h3 {
+  display: inline;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.skill__key::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: -20px;
+  width: 50px;
+  height: 50px;
+}
+.skill__value {
+  display: inline;
+}
+.skill__value p {
+  display: inline;
+  margin-left: 5px;
+}
+.skill__upper {
+  text-transform: uppercase;
+}
+.skill__css::before {
+  background: url(../img/skills/css.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__git::before {
+  background: url(../img/skills/git.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__html::before {
+  background: url(../img/skills/html.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__js::before {
+  background: url(../img/skills/js.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__sass::before {
+  background: url(../img/skills/sass.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__python::before {
+  background: url(../img/skills/python.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__sql::before {
+  background: url(../img/skills/sql.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__django::before {
+  background: url(../img/skills/django.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.skill__docker::before {
+  background: url(../img/skills/docker.png) 0 0 no-repeat;
+  background-size: contain;
+}
+
+.portfolio {
+  margin-bottom: 50px;
+}
+.portfolio__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.portfolio__projects {
+  display: flex;
+  justify-content: space-around;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.project__box {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 320px;
+  background-color: #222420;
+  margin-bottom: 20px;
+  align-items: center;
+  position: relative;
+}
+.project__project-name h4 {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #156741;
+}
+.project__technology p {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.project__technology p::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  left: 60px;
+  top: 9rem;
+  background-color: #44B78B;
+}
+.project__preview {
+  flex-grow: 1;
+  text-align: center;
+}
+.project__preview p {
+  padding: 0 60px;
+}
+.project__see-more {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.project__see-more a {
+  background-color: #32312E;
+  border-radius: 8px;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  color: #C9F0DD;
+  font-size: 1.4rem;
+}
+.project__see-more a:hover {
+  color: #44B78B;
+}
+
+.soft-skills {
+  margin-bottom: 50px;
+}
+.soft-skills__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.soft-skills__box {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.soft-skills__parametr h4 {
+  display: inline;
+  text-align: left;
+  font-size: 1.4rem;
+}
+.soft-skills__value p {
+  display: inline;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.soft-skills__symbol {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.footer__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.footer__footer-about {
+  flex-basis: 33%;
+}
+.footer__contacts {
+  flex-basis: 66%;
+}
+.footer__rsschool p {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.footer__rsschool p a {
+  color: #44B78B;
+}
+
+.footer-about__img {
+  width: 100%;
+  text-align: center;
+}
+.footer-about__img a img {
+  width: 65%;
+}
+.footer-about__rs-text {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.footer-about__surname-name {
+  padding: 0px;
+  text-align: center;
+}
+.footer-about__text {
+  padding: 16px;
+  text-align: center;
+}
+
+.contact ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact__main {
+  flex-basis: 50%;
+  padding-bottom: 3rem;
+  font-size: 1.5rem;
+  padding-left: 60px;
+  position: relative;
+}
+.contact__main::before {
+  content: " ";
+  position: absolute;
+  left: 10px;
+  top: -7px;
+  width: 38px;
+  height: 38px;
+}
+.contact__main a {
+  color: #44B78B;
+}
+.contact__main a:hover {
+  color: #C9F0DD;
+}
+.contact__mail::before {
+  background-image: url(../img/social/mail.png);
+  filter: invert(0.65);
+}
+.contact__phone::before {
+  background-image: url(../img/social/phone.png);
+  filter: invert(0.65);
+}
+.contact__github::before {
+  background-image: url(../img/social/git.png);
+  filter: invert(0.65);
+}
+.contact__telegram::before {
+  background-image: url(../img/social/new/tg.png);
+  opacity: 0.65;
+}
+
+body {
+  background-color: #1F1E1B;
+  color: #C9F0DD;
+  font-family: Inconsolata, monospace;
+}
+
+.title h2 {
+  color: #44B78B;
+  font-size: 2.1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.surname-name {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 400;
+}
