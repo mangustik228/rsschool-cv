@@ -1,1 +1,295 @@
-﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Главная страница</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__wrapper">
+        <div class="header__surname-name surname-name">
+            <p><span class="header__green green">V</span>asiliy <span class="header__green green">O</span>vchinnikov</p>
+        </div>
+        <nav class="header__navigation">
+            <ul>
+                <li><a href="#about-me">About me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+<div class="about-me">
+    <div class="about-me__wrapper">
+        <div class="about-me__main-block main-block">
+            <div class="main-block__my-name">
+                <h1>Vasiliy Ovchinnikov</h1>
+            </div>
+            <div class="main-block__profession"><p>web-developer</p></div>
+            <div class="main-block__description">
+                <p>Junior web-developer looking for ideas and projects for himself and others</p>
+            </div>
+        </div>
+        <div class="about-me__code-block code-block">
+            <div class="code-block__image"><img src="img/j-black-2.png" alt="It is not me. but just nice picture"></div>
+            <div class="code-block__code">
+                <pre><code>
+import MySQLdb
+from scrapy_playwright.page import PageMethod
+from scrapy.http.response.html import HtmlResponse
+from scrapy.loader import ItemLoader
+from scrapy.spidermiddlewares.httperror import HttpError
+from scrapy import signals
+
+
+class SpiderMarketplace(scrapy.Spider):
+    name = 'spider_marketplace'
+    allowed_domains = ['marketplace.ru/']
+    custom_settings = dict(
+        PLAYWRIGHT_PROCESS_REQUEST_HEADERS=None, 
+        PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT=70000,
+        PLAYWRIGHT_BROWSER_TYPE='chromium',
+    )
+    
+
+    def __init__(self, manager: XzManager = None, **kwargs):
+        super().__init__(name, **kwargs)
+        self.manager: XzManager = manager
+        self.context_manager = Context(proxies=PROXIES)
+        self.len_path = len(manager.base_path) + 1
+        MySQLdb.connect(**self.manager.db_connection)        
+        
+        
+    def start_requests(self):
+        for marketplace_seller_id in self.manager.sellers_id:  
+            path_xz = self.manager(seller_id, 'base')
+            meta = self.generate_meta(seller_id, 'product')
+            self.logger.info(f'start_parsing')
+            yield scrapy.Request(
+                url=f'https://{marketplace_seller_id}/',
+                errback=self.errback_func,
+                meta=meta,
+                dont_filter=True)
+           
+                </code></pre>
+            </div>
+            
+            
+            
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="skills">
+    <div class="skills__title title"><h2 id="skills">My&nbsp;skills</h2></div>
+    <div class="skills__wrapper">
+
+        <div class="skill__box">
+            <div class="skill__key skill__css" title="basic">
+                <h3 class="skill__upper">css</h3>
+            </div>
+            <div class="skill__value"><p>(2/10)</p></div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__git" title="basic">
+                <h3 class="skill__upper">git</h3>
+            </div>
+            <div class="skill__value"><p>(1/10)</p></div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__html" title="basic">
+                <h3 class="skill__upper">html</h3>
+            </div>
+            <div class="skill__value">
+                <p>(3/10)</p>
+            </div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__js" title="basic">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill__value">
+                <p>(3/10)</p>
+            </div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__python" title="basic">
+                <h3>Python</h3>
+            </div>
+            <div class="skill__value">
+                <p>(4/10)</p>
+            </div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__sass" title="basic">
+                <h3 class="skill__upper">sass</h3>
+            </div>
+            <div class="skill__value">
+                <p>(3/10)</p>
+            </div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__django" title="basic">
+                <h3>Django</h3>
+            </div>
+            <div class="skill__value">
+                <p>(1/10)</p>
+            </div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__docker" title="can make simple docker-compose file">
+                <h3>Docker</h3>
+            </div>
+            <div class="skill__value">
+                <p>(2/10)</p>
+            </div>
+        </div>
+
+        <div class="skill__box">
+            <div class="skill__key skill__sql" title="basic">
+                <h3 class="skill__upper">sql</h3>
+            </div>
+            <div class="skill__value">
+                <p>(3/10)</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="soft-skills">
+    <div class="soft-skills__title title"><h2>My&nbsp;soft-skills</h2></div>
+    <div class="soft-skills__wrapper">
+        <div class="soft-skills__box">
+            <div class="soft-skills__parametr"><h4>English</h4></div>
+            <div class="soft-skills__value"><p>A1</p></div>
+        </div>
+        <div class="soft-skills__box">
+            <div class="soft-skills__parametr"><h4>Communication</h4></div>
+            <div class="soft-skills__value"><p>B1</p></div>
+        </div>
+        <div class="soft-skills__box">
+            <div class="soft-skills__parametr"><h4>Russia</h4></div>
+            <div class="soft-skills__value"><p>C1</p></div>
+        </div>
+        <div class="soft-skills__box">
+            <div class="soft-skills__parametr"><h4>Blind-printing</h4></div>
+            <div class="soft-skills__value"><p class="soft-skills__symbol">✌️</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio">
+    <div class="portfolio__title title"><h2 id="projects">My&nbsp;projects</h2></div>
+    <div class="portfolio__wrapper">
+        <div class="portfolio__projects">
+            <div class="project__box">
+                <div class="project__project-name">
+                    <h4>Parser</h4>
+                </div>
+                <div class="project__technology">
+                    <p>requests, bs4, tkinter</p>
+                </div>
+                <div class="project__preview">
+                    <p>Project with GUI interface for one social organization and for bonus was realization <strong>parsing .xlsx</strong> files</p>
+                </div>
+                <div class="project__see-more">
+                    <a href="https://github.com/mangustik228/project_kochi">See project →</a>    
+                </div>
+            </div>
+
+            <div class="project__box">
+                <div class="project__project-name">
+                    <h4>Research-project</h4>
+                </div>
+                <div class="project__technology">
+                    <p>pandas, plotly.express</p>
+                </div>
+                <div class="project__preview">
+                    <p>Research-project Russia film fund</p>
+                </div>
+
+                <div class="project__see-more">
+                    <a href="https://github.com/mangustik228/project_ds_4/blob/main/project_4.ipynb">See project →</a>    
+                </div>
+            </div>
+
+            <div class="project__box">
+                <div class="project__project-name">
+                    <h4>Front-end project</h4>
+                </div>
+
+                <div class="project__technology">
+                    <p>html, css, sass</p>
+                </div>
+
+                <div class="project__preview">
+                    <p>First project in <strong>RS-SCHOOL</strong>. CV-page wrote only CSS and HTML</p>
+                </div>
+
+                <div class="project__see-more">
+                    <a href="https://github.com/mangustik228/rsschool-cv/tree/gh-pages">See project →</a>    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<article class="history">
+    <div class="history__title title"><h2 id="about-me">About&nbsp;me</h2></div>
+    
+    <div class="history__wrapper">
+        <div class="history__logo"><img src="img/logo.png" alt="just logo"></div>
+        <div class="history__text"><p>I worked 10 years in furniture production. After 24February i was starting to learn programming. First theme was DataScience. After few month, I undestand myself: I want to be backend-developer or fullstack-developer. </p></div>
+        
+    </div>
+</article>
+</main>
+<footer class="footer">
+    <div class="footer__wrapper">
+        <div class="footer__footer-about footer-about">
+            <div class="footer-about__surname-name surname-name"><p><span class="footer__green green">V</span>asiliy <span class="footer__green green">O</span>vchinnikov</p></div>
+            <div class="footer-about__text"><p>This is making special for <span class="footer-about__rs-text">rs-school</span>.</p></div>
+            <div class="footer-about__img"><a href="https://rs.school/js/"><img src="img/rs_school.svg" alt="rs-school logo"></a></div>
+            
+            
+        </div>
+
+
+        <div class="footer__contacts contact">
+            <div class="contact__title title"><h2 id="contacts">Contacts</h2></div>
+            <ul>
+                <li class="contact__main contact__mail"><a href="mailto:bacek.mangust@gmail.com">bacek.mangust@gmail.com</a></li>
+                <li class="contact__main contact__phone"><a href="tel:+66635136940">+66&nbsp;6&nbsp;3513&nbsp;6940</a></li>
+                <li class="contact__main contact__github"><a href="https://github.com/mangustik228">@mangustik228</a></li>
+                <li class="contact__main contact__telegram"><a href="https://t.me/mangusik228">+7&nbsp;917&nbsp;505&nbsp;68&nbsp;14</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__rsschool">
+        <p> Copyright © 2022. Making special for <a href="https://rs.school/js-stage0/">rs-school</a>
+        </p>
+    </div>
+    
+</footer>
+<script src="js/app.min.js"></script>
+</body>
+</html>
