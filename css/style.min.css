@@ -458,7 +458,7 @@ html {
   filter: invert(0.65);
 }
 .contact__telegram::before {
-  background-image: url(../img/social/new/tg.png);
+  background-image: url(../img/social/tg.png);
   opacity: 0.65;
 }
 
